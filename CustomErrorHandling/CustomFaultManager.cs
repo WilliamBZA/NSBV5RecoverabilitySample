@@ -29,6 +29,7 @@ public class CustomFaultManager :
 
     public void ProcessingAlwaysFailsForMessage(TransportMessage message, Exception e)
     {
+        // TODO: Change this to the timeout exception or for which exceptions this message should be sent to the secondary queue
         if (e is MyCustomException)
         {
             // Send this message to the queue dedicated to processing the failing messages
